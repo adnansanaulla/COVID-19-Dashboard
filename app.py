@@ -13,7 +13,7 @@ def plot_cases(country):
 df = pd.read_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
 print(df.columns)
 df = df[['location', 'date', 'total_cases', 'new_cases', 'total_deaths', 'people_vaccinated', 'continent']]
-df['date'] = pd.to_datetime(df['data'])
+df['date'] = pd.to_datetime(df['date'])
 df = df[df['continent'].notnull()]
 
 app = dash.Dash(__name__)
